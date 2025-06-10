@@ -35,6 +35,7 @@ export const loginSlice = createSlice({
             state.login = "";
             state.email = "";
             state.uniqueId = "";
+            localStorage.removeItem('user');
         }
     }
 })

@@ -40,6 +40,7 @@ export default function useLogin(): {
                 }
 
                 dispatch(login(parseData));
+                localStorage.setItem('user', JSON.stringify(parseData))
                 setInfo(res.data.info);
                 navigate("/");
             }

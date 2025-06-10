@@ -4,6 +4,5 @@ import { useAppSelector } from "../hooks/hooks";
 
 export default function Home() {
     const user = useAppSelector((state) => state.login);
-    console.log(user)
-    return <h1>Home</h1>
+    return <h1>{user.login}</h1>
 }

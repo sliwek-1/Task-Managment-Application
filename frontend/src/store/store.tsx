@@ -1,12 +1,20 @@
 import { configureStore } from "@reduxjs/toolkit"
 import loginReducer from "../slices/loginSlice"; 
 import { login } from "../slices/loginSlice";
+import { LoginState } from "../slices/loginSlice";
 
 export const store = configureStore({
     reducer: {
         login: loginReducer
     }
 })
+
+let storedUser = localStorage.getItem('user');
+
+if(storedUser) {
+    let user: LoginState = JSON.parse(storedUser);
+    store.dispatch(login(user))
+}
 
 export type AppStore = typeof store;
 export type RootState = ReturnType<AppStore['getState']>

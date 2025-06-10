@@ -53,12 +53,10 @@ export default function RegisterForm() {
             <Form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column align-items-center justify-content-around mb-5 border rounded p-5" style={{width: "20vw", minHeight: "50vh"}}>
                 <h1>Register</h1>
 
-                
                 {error ? 
                 <Form.Text className="text-danger">{error}</Form.Text> 
                 : 
                 <Form.Text className="text-success">{info}</Form.Text>}
-
 
                 <Form.Group className="w-100">
                     <Form.Label>Name: </Form.Label>
