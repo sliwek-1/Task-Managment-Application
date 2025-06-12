@@ -1,5 +1,5 @@
 
-export default async function create(req, res) {
+async function create(req, res) {
     try {
         
     } catch (error) {
@@ -7,7 +7,7 @@ export default async function create(req, res) {
     }
 }
 
-export default async function update(req, res) {
+async function update(req, res) {
     try {
         
     } catch (error) {
@@ -15,7 +15,7 @@ export default async function update(req, res) {
     }
 }
 
-export default async function deleteGroup(req, res) {
+async function deleteGroup(req, res) {
     try {
         
     } catch (error) {
@@ -23,7 +23,7 @@ export default async function deleteGroup(req, res) {
     }
 }
  
-export default async function getAll(req, res) {
+async function getAll(req, res) {
     try {
         
     } catch (error) {
@@ -31,10 +31,12 @@ export default async function getAll(req, res) {
     }
 }
 
-export default async function getOne(req, res) {
+async function getOne(req, res) {
     try {
         
     } catch (error) {
         return res.status(500).send("Something went wrong")
     }
 }
+
+export {create, update, deleteGroup, getAll, getOne}

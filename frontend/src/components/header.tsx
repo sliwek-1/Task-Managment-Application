@@ -6,7 +6,7 @@ export default function Header() {
     const user = useAppSelector((state) => state.login);
 
     return <>
-        <header className="d-flex justify-content-between p-3 align-items-center" style={{height: "10vh"}}>
+        <header className="d-flex justify-content-between p-3 align-items-center" style={{height: "7vh"}}>
             <h2>Task Manager Application</h2>
 
             {user ?      
