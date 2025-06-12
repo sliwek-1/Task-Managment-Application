@@ -1,6 +1,7 @@
 import express from "express";
 import userRouter from "./routes/user-routes.js";
 import authRouter from "./routes/auth-routes.js";
+import groupRouter from "./routes/group-routes.js";
 import sequelize from "./database/database.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
@@ -30,6 +31,7 @@ app.use(express.json());
 
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
+app.use('/group', groupRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`)
