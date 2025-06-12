@@ -1,15 +1,21 @@
 import express from "express";
+import create from "../controllers/group-controller.js";
+import update from "../controllers/group-controller.js";
+import deleteGroup from "../controllers/group-controller.js";
+import getAll from "../controllers/group-controller.js";
+import getOne from "../controllers/group-controller.js";
+import auth from "../middleware/auth-middleware.js";
 
 const groupRouter = express.Router();
 
-groupRouter.post('/create', login);
+groupRouter.post('/create', auth, create);
 
-groupRouter.post("/update", register);
+groupRouter.post("/update", auth, update);
 
-groupRouter.post("/delete/:id", register);
+groupRouter.post("/delete/:id", auth, deleteGroup);
 
-groupRouter.post("/getAll", register);
+groupRouter.post("/getAll", auth, getAll);
 
-groupRouter.post("/getOne/:id", register);
+groupRouter.post("/getOne/:id", auth, getOne);
 
 export default groupRouter;
