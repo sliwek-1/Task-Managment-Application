@@ -6,11 +6,7 @@ export default function Sidebar() {
     return (
         <>
             <aside className="d-flex flex-column justify-content-center align-items-start p-3" style={{width: "10vw"}}>
-                <nav  style={{height: "5vh"}}>
-                    <h4>Groups</h4>
-                </nav>
-                
-                <div className="d-flex flex-column align-items-center justify-content-start rounded p-3" style={{width: "4vw", height: "85vh", background: "#eee"}}>
+                <div className="d-flex flex-column align-items-center justify-content-start rounded p-3 border" style={{width: "4vw", height: "85vh"}}>
                     <TooltipWrapper message="Grupa1">
                         <div className="f-flex mb-3">
                             <Button className="rounded-circle">G</Button>

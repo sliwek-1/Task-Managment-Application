@@ -9,7 +9,7 @@ export default function Dashboard() {
     return (
         <>
             <Header />
-            <div className="d-flex align-items-center justify-content-between">
+            <div className="d-flex align-items-center justify-content-between" style={{height: "90vh"}}>
                 <Sidebar />
                 <Main />
             </div>
