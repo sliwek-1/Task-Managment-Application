@@ -31,12 +31,15 @@ export default function AddGroup() {
     }   
 
     const {loading, error, info, addGroup} = useGroup();
-
+    
     const onSubmit = (data: FormData) => {
         const paresdData = {
             name: data.name,
-            description: data.description
+            description: data.description,
+            access: data.access
         }
+
+        addGroup(paresdData)
     }   
 
     return (

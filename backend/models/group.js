@@ -20,9 +20,13 @@ const Group = sequelize.define('Group', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    access: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     title_img_url: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
 })
 

@@ -7,5 +7,4 @@ Group.belongsTo(User, {
     foreignKey: 'owner'
 })
 
-
 export {User, Group}
