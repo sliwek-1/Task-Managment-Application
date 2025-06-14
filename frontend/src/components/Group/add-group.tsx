@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Form from "react-bootstrap/Form"
 import { Button, Modal, CloseButton } from "react-bootstrap";
-import useGroup from "../../hooks/addGroup";
+import useAddGroup from "../../hooks/addGroup";
 import { useAppDispatch } from "../../hooks/hooks";
 import { useAppSelector } from "../../hooks/hooks";
 import { closeTab } from "../../slices/tabSlice";
@@ -30,8 +30,8 @@ export default function AddGroup() {
         dispatch(closeTab({tab: "addGroup", isOpen: false}));
     }   
 
-    const {loading, error, info, addGroup} = useGroup();
-    
+    const {loading, error, info, addGroup} = useAddGroup();
+
     const onSubmit = (data: FormData) => {
         const paresdData = {
             name: data.name,

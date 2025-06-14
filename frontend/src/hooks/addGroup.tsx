@@ -7,11 +7,11 @@ interface GroupData {
     access: string
 }
 
-export default function useGroup(): {
+export default function useAddGroup(): {
     loading: Boolean,
     error: string,
     info: string,
-    addGroup: (data: GroupData) => Promise<void>
+    addGroup: (data: GroupData) => Promise<void>,
 } {
     const [loading, setLoading] = useState<Boolean>(false);
     const [error, setError] = useState<string>("");
@@ -26,11 +26,11 @@ export default function useGroup(): {
             });
 
             if(res.status ==  200) {
-                setInfo(res.data.info);
+                setInfo(res.data);
             }
 
         } catch (error: any) {
-            setError(error.response.data)
+            setError(error.data)
         } finally {
             setLoading(false);
         }
