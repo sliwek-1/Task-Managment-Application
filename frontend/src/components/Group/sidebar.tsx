@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { TooltipWrapper } from "./tooltip-wrapper";
+import AddGroup from "./add-group";
+import { setTab } from "../../slices/tabSlice";
+import { useAppDispatch } from "../../hooks/hooks";
+import { useAppSelector } from "../../hooks/hooks";
 
 export default function Sidebar() {
+
+    const dispatch = useAppDispatch();
+    const tab = useAppSelector((state) => state.tab.tabStates["addGroup"])
+
+    const setWindow = () => {
+        dispatch(setTab({tab: "addGroup", isOpen: true}));
+    }   
+
+    console.log(tab);
+
     return (
         <>
             <aside className="d-flex flex-column justify-content-center align-items-start p-3" style={{width: "10vw"}}>
@@ -39,11 +53,12 @@ export default function Sidebar() {
 
                     <TooltipWrapper message="Dodaj Grupe">
                         <div className="f-flex mb-3 mt-auto">
-                            <Button variant="success" className="rounded-circle">+</Button>
+                            <Button variant="success" className="rounded-circle" onClick={() => setWindow()}>+</Button>
                         </div>
                     </TooltipWrapper>
                 </div>
             </aside> 
+            {tab ? <AddGroup /> : null}
         </>
     )
 }

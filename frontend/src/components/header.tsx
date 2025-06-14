@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button, Dropdown } from "react-bootstrap";
 import { useAppSelector } from "../hooks/hooks";
 
 export default function Header() {
@@ -11,8 +11,20 @@ export default function Header() {
 
             {user ?      
                 <div className="d-flex justify-content-around" style={{width: "10vw"}}>
-                    <div className="d-flex align-items-center">{user.login}</div>
-                    <Button variant="danger" href="#">Logout</Button>
+                    <Dropdown className="dropdown-bg">
+                        <Dropdown.Toggle id="dropdown-basic">
+                            {user.login}
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                            <Dropdown.Item>
+                                Settings
+                            </Dropdown.Item>
+                            <Dropdown.Item className="text-danger dropdown-item">
+                                Logout
+                            </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </div>
                 :
                 <div className="d-flex justify-content-around" style={{width: "10vw"}}>

@@ -1,3 +1,7 @@
-.tab {
-  transition: all 0.7s ease-in-out;
+.dropdown-bg {
+  background-color: white;
+}
+
+.dropdown-item:focus{
+  background-color: white;
 }

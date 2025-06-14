@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit"
 import loginReducer from "../slices/loginSlice"; 
+import tabReducer from "../slices/tabSlice";
 import { login } from "../slices/loginSlice";
 import { LoginState } from "../slices/loginSlice";
 
 export const store = configureStore({
     reducer: {
-        login: loginReducer
+        login: loginReducer,
+        tab: tabReducer
     }
 })
 
