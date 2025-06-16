@@ -3,6 +3,7 @@ import sequelize from "../database/database.js";
 import { v4 as uuid } from "uuid";
 
 
+
 const Membership_Group = sequelize.define('Membership_Group', {
     uniqueID: {
         type: DataTypes.STRING,
